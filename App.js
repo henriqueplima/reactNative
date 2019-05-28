@@ -1,33 +1,37 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
 
-import Seasons from './components/Seasons';
+import {
+  createStackNavigator,
+  createAppContainer,
+} from 'react-navigation';
 
-import { SafeAreaView } from 'react-navigation';
+import HomeScreen from './screens/Home';
+import TemporadaScreen from './screens/Temporada'
 
-export default class App extends React.Component {
-  getData(season){
-    fetch(`http://ergast.com/api/f1/${season}.json`)
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(data);
-      });
-  }
-
-  render() {
-    return (
-      <View style={styles.container}>
-        <Seasons handleClick={this.getData}/>
-      </View>
-    );
-  }
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+const AppNavigator = createStackNavigator(
+  {
+    Home:{
+      screen:HomeScreen,
+    },
+    Temporada: {
+      screen:TemporadaScreen,
+    }
   },
-});
+  {
+    initalRouteName:'Home',
+    defaultNavigationOptions: {
+      headerStyle: {
+        backgroundColor: '#333',
+      },
+      headerTintColor:'#fff',
+      headerTitleStyle:{
+        fontWeight:'bold'
+      },
+    },
+  }
+
+);
+
+export default createAppContainer(AppNavigator);
+
+
