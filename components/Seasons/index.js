@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import { View } from 'react-native';
 import { Button, Text } from 'native-base';
+import { ScrollView } from 'react-native';
 
 import style from './style'
 import { SafeAreaView } from 'react-navigation';
@@ -13,7 +14,7 @@ class Seasons extends PureComponent {
         for (let i = 0; i < 20; i++) {
             const year = '20' + (i > 9 ? i: `0${i}`);
             items.push(
-                <Button 
+                <Button style={ style.button } 
                     onPress={ () => this.props.handleClick(year) }
                     key={ `season-${i}` }>
                     <Text>
@@ -28,9 +29,13 @@ class Seasons extends PureComponent {
 
     render() {
         return(
-            <SafeAreaView style={ style.container }>
-                { this.renderSeasons() }
-            </SafeAreaView>
+            <ScrollView>
+                <SafeAreaView style={ style.container }>
+                {/* <ScrollView > */}
+                    { this.renderSeasons() }
+                {/* </ScrollView> */}
+                </SafeAreaView>
+            </ScrollView>
         );
     }
 }

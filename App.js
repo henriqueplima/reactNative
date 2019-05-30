@@ -7,6 +7,7 @@ import {
 
 import HomeScreen from './screens/Home';
 import TemporadaScreen from './screens/Temporada'
+import MenuScreen from './screens/Menu'
 
 const AppNavigator = createStackNavigator(
   {
@@ -15,6 +16,9 @@ const AppNavigator = createStackNavigator(
     },
     Temporada: {
       screen:TemporadaScreen,
+    },
+    Menu:{
+      screen:MenuScreen
     }
   },
   {

@@ -1,0 +1,213 @@
+Promise.all([
+            fetch(`http://ergast.com/api/f1/${season}.json`),
+            fetch(`http://ergast.com/api/f1/${season}/drivers.json`)
+        ])  
+            .then((responses) => responses.map((response) => response.json()))
+            .then((data) => {
+                console.log('temporada', data[0]);
+
+                console.log('pilotos', data[1]);
+                // this.props.navigation.navigate()
+            });
+
+---------
+
+import React, { PureComponent } from 'react';
+import { Image, Platform } from 'react-native';
+
+import Logo from '../../assets/logo.png';
+
+export default class LogoTitle extends PureComponent {
+  render() {
+    const style = Platform.OS === 'ios' ?
+      { width: 111, height: 30 } :
+      { 
+        width: 111, 
+        height: 30, 
+        position: 'absolute', 
+        left: '50%', 
+        marginLeft: -55
+    }; 
+
+    return (<Image
+      style={ style }
+      source={ Logo }
+    />);
+  }
+}
+
+----
+
+https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+
+--- 
+Promise.all([
+            fetch(`http://ergast.com/api/f1/${season}.json`),
+            fetch(`http://ergast.com/api/f1/${season}/drivers.json`)
+        ])  
+            .then((responses) => responses.map((response) => response.json()))
+            .then((data) => {
+                console.log('temporada', data[0]);
+
+                console.log('pilotos', data[1]);
+                // this.props.navigation.navigate()
+            });
+
+
+
+
+import { StyleSheet, Text, View } from 'react-native';
+
+
+    getData(season) {
+
+        fetch(`http://ergast.com/api/f1/${season}.json`)
+            .then((response) => response.json())
+            .then((data) => {
+                //console.log(data);
+                console.log(this.props.navigation);
+            });
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+import React from 'react';
+import { StyleSheet, Text, View } from 'react-native';
+import Seasons from '../../components/Seasons';
+import {SafeAreaView} from 'react-navigation';
+
+
+
+export default class App extends React.Component {
+  getData(season) {
+    fetch('http://ergast.com/api/f1/' + season + '.json')
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+      });
+
+  }
+
+
+  render() {
+    return (
+      <SafeAreaView style={styles.container}>
+        <Seasons
+          nomeFuncao={this.getData}
+        ></Seasons>
+      </SafeAreaView>
+    );
+  }
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Empreendedorismo - Start Me Up
+Empreendedorismo: Propósito, Felicidade e Sucesso
+Gamification
+Gestão de Projetos - PMI
+Inove com Design Thinking
+SEO - O Caminho da Busca ao Resultado no Google
+Sharepoint 2013
+Storytelling - A New Way to Tell Stories
+UX - Creating Killer Experiences
+
+
+
+
+
+Promise.all([
+            fetch(`http://ergast.com/api/f1/${season}.json`),
+            fetch(`http://ergast.com/api/f1/${season}/drivers.json`)
+        ])  
+            .then((responses) => responses.map((response) => response.json()))
+            .then((data) => {
+                console.log('temporada', data[0]);
+
+                console.log('pilotos', data[1]);
+                // this.props.navigation.navigate()
+            });
+
+http://ergast.com/api/f1/2000.json?limit=10&offset=999
+
+ const year = '20' + (i > 9 ? i: `0${i}`);
+
+
+
+!!! COPIE AS SEGUINTES LINHAS DE COMANDO, COLE E EXECUTE NO TERMINAL !!!
+
+mkdir ~/.npm-global
+npm config set prefix '~/.npm-global'
+export PATH=~/.npm-global/bin:$PATH
+npm -g install expo-cli --global
+export PATH=$PATH:~/.npm-global/bin
+
+
+!!! CASO FECHE O TERMINAL, AO REABRIR-LO RODE A SEGUINTE LINHA DE COMANDO !!!
+
+export PATH=$PATH:~/.npm-global/bin
+
+
+npm install native-base ---save
+npm install @expo/vector-icons --save
+
+npm install -save react-navigation
