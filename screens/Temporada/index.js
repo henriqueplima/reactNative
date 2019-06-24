@@ -39,7 +39,6 @@ export default class Temporada extends React.Component {
 
 
   render() {
-    //   console.log(this.state.races);
       const { races } = this.state;
     return (
       <SafeAreaView>

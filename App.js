@@ -7,6 +7,9 @@ import {
 
 import HomeScreen from './screens/Home';
 import TemporadaScreen from './screens/Temporada'
+import MenuScreen from './screens/Menu'
+import ListaItemScreen from './screens/ListaItem'
+import DetalhesScreen from './screens/Detalhes'
 
 const AppNavigator = createStackNavigator(
   {
@@ -15,6 +18,15 @@ const AppNavigator = createStackNavigator(
     },
     Temporada: {
       screen:TemporadaScreen,
+    },
+    Menu:{
+      screen:MenuScreen,
+    },
+    ListaItem:{
+      screen:ListaItemScreen,
+    },
+    Detalhes: {
+      screen:DetalhesScreen
     }
   },
   {

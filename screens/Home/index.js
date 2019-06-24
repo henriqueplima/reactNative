@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, ScrollView } from 'react-native';
 
 import Seasons from '../../components/Seasons';
 
@@ -15,27 +15,25 @@ export default class Home extends React.Component {
 
     static navigationOptions = () => {
         return {
-            title:'Home',
+            title:'Temporada',
         }; 
     }
 
   getData(season){
-    // fetch(`http://ergast.com/api/f1/${season}.json`)
-    //   .then((response) => response.json())
-    //   .then((data) => {
-          
-    //   });
-      this.props.navigation.navigate('Temporada',{
-          season,
-          name: 'Testando conteudo'
-      });
+      this.props.navigation.navigate('Menu',{
+        season,
+        name: 'Menu'
+    });
   }
 
   render() {
     return (
-      <SafeAreaView style={styles.container}>
-        <Seasons handleClick={this.getData}/>
-      </SafeAreaView>
+      <ScrollView>
+        <SafeAreaView style={styles.container}>
+          <Seasons handleClick={this.getData}/>
+        </SafeAreaView>
+      </ScrollView>
+      
     );
   }
 }
